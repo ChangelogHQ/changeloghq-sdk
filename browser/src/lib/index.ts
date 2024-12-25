@@ -3,8 +3,8 @@ import { IChangelogItem } from "./api/models/IChangelogItem";
 import { ChangelogUpdateManager } from "./services/ChangelogUpdatesManager";
 import { IChangelogItemStateful } from "./services/models/IChangelogItemStateful";
 
-import UnredBadge from "./components/UnredBadge";
-import UnredBadgeControlled from "./components/UnredBadgeControlled";
+import UnreadBadge from "./components/UnreadBadge";
+import UnreadBadgeControlled from "./components/UnredBadgeControlled";
 
 export type { IChangelogItem, IChangelogItemStateful };
-export { ChangelogUpdateManager, ChangelogClient, UnredBadge, UnredBadgeControlled };
+export { ChangelogUpdateManager, ChangelogClient, UnreadBadge, UnreadBadgeControlled };

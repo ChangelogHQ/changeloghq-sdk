@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
-import { ChangelogUpdateManager, IChangelogItemStateful, UnredBadgeControlled } from './lib'
+import { ChangelogUpdateManager, IChangelogItemStateful, UnreadBadgeControlled } from './lib'
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
     <>
       <h1>
         <span>ChangelogHQ SDK Demo</span>
-        <UnredBadgeControlled url={serviceUrl}/>
+        <UnreadBadgeControlled url={serviceUrl} allowPopup={true}/>
       </h1>
       
       <p className="read-the-docs">

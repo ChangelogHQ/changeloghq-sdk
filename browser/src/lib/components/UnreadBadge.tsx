@@ -3,9 +3,10 @@ import { useRef } from "react"
 export interface IUnredBadgeProps {
     width?: number
     unreadCount: number
+    onClick?: () => void
 }
 
-function UnredBadge(props: IUnredBadgeProps) {
+function UnreadBadge(props: IUnredBadgeProps) {
     
     // define the element     
     const ref = useRef(null)
@@ -31,11 +32,11 @@ function UnredBadge(props: IUnredBadgeProps) {
     
     // render the badge
     return (                
-        <svg width={width} height={width} style={{position: "absolute", left: targetX, top: targetY}} ref={ref}>
+        <svg width={width} height={width} style={{position: "absolute", left: targetX, top: targetY, cursor: props.onClick ? 'pointer' : 'default' }} ref={ref} onClick={props.onClick}>
             <circle cx={width / 2} cy={width /2 } r={width /2 } fill="red" />
             <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize={fontSizeLabel} fontFamily="Arial" dy=".35em">{props.unreadCount.toFixed(0)}</text>
         </svg>                
     )
 }
 
-export default UnredBadge
+export default UnreadBadge
