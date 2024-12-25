@@ -39,7 +39,7 @@ function App() {
     <>
       <h1>
         <span>ChangelogHQ SDK Demo</span>
-        <UnreadBadgeControlled url={serviceUrl} allowPopup={true}/>
+        <UnreadBadgeControlled url={serviceUrl} />
       </h1>
       
       <p className="read-the-docs">
