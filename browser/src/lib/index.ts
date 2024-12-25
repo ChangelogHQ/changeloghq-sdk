@@ -4,7 +4,7 @@ import { ChangelogUpdateManager } from "./services/ChangelogUpdatesManager";
 import { IChangelogItemStateful } from "./services/models/IChangelogItemStateful";
 
 import UnreadBadge from "./components/UnreadBadge";
-import UnreadBadgeControlled from "./components/UnredBadgeControlled";
+import UnreadBadgeControlled from "./components/UnreadBadgeControlled";
 
 export type { IChangelogItem, IChangelogItemStateful };
 export { ChangelogUpdateManager, ChangelogClient, UnreadBadge, UnreadBadgeControlled };
