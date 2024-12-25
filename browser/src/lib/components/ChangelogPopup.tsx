@@ -75,7 +75,7 @@ function ChangelogPopup(props: IChangelogPopupProps) {
                     </svg>                                      
                 </div>                    
                 <div className="changelog-content" style={styleMain}>
-                    <iframe src={props.url} style={{width: '100%', height: '100%', border: 'none'}}></iframe>
+                    <iframe src={props.url + '?v=' + Date.now} style={{width: '100%', height: '100%', border: 'none'}}></iframe>
                 </div>                            
             </div>
         </div>
