@@ -10,9 +10,8 @@ export class ChangelogUpdateManager {
         const client = new ChangelogClient(serviceUri)
         return client.fetchLatestChanges().then((items) => {    
             
-            // get the last readtime
-            const accessmonitor = new ChangelogAccessMonitor();
-            const lastReadTime = accessmonitor.getLastTouch();
+            // get the last readtime            
+            const lastReadTime = ChangelogAccessMonitor.getLastTouch();
     
             // set the unread counter
             let unreadCounter = 0
@@ -38,14 +37,12 @@ export class ChangelogUpdateManager {
 
     public static acknowledgeUpdates() {
     
-        // touch the via access monitor
-        var accessmonitor = new ChangelogAccessMonitor();
-        accessmonitor.touch();
+        // touch the via access monitor        
+        ChangelogAccessMonitor.touch();
     }
 
     public static resetUpdates(to?: string) {    
-        // touch the via access monitor
-        var accessmonitor = new ChangelogAccessMonitor();
-        accessmonitor.reset(to);
+        // touch the via access monitor        
+        ChangelogAccessMonitor.reset(to);
     }
 }

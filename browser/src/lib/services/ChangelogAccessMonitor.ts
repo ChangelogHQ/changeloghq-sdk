@@ -3,7 +3,7 @@ export class ChangelogAccessMonitor {
     // define a constant used in localstorage
     private static readonly LAST_READ_KEY = 'changeloghq.lastRead';
 
-    getLastTouch(): Date | undefined {
+    public static getLastTouch(): Date | undefined {
         // read the last time the system read the changelog
         const lastReadDateString = localStorage.getItem(ChangelogAccessMonitor.LAST_READ_KEY) 
 
@@ -11,12 +11,12 @@ export class ChangelogAccessMonitor {
         return lastReadDateString ? new Date(lastReadDateString) : undefined;
     }
 
-    touch() {
+    public static touch() {
         // write the current time to localstorage
         localStorage.setItem(ChangelogAccessMonitor.LAST_READ_KEY, new Date().toISOString())
     }
 
-    reset(to: string | undefined) {
+    public static reset(to: string | undefined) {
         // remove the last read time
         localStorage.removeItem(ChangelogAccessMonitor.LAST_READ_KEY)
 
