@@ -1,6 +1,6 @@
 {
   "name": "@changeloghq/changeloghq-sdk-browser",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./dist/lib/cjs/index.js",
   "module": "./dist/lib/esm/index.js",
   "types": "./dist/lib/esm/index.d.ts",

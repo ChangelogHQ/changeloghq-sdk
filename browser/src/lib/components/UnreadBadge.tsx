@@ -44,16 +44,7 @@ function UnreadBadge(props: IUnredBadgeProps) {
 
         // calculate the position of the parent element    
         const pos = parentElement.getBoundingClientRect()
-        setTargetPosition({x: pos.x + pos.width, y: pos.y})                    
-
-        // override postion
-        if (props.left) {
-            setTargetPosition({x: props.left, y: pos.y})        
-        }
-
-        if (props.top) {
-            setTargetPosition({x: pos.x, y: props.top})        
-        }
+        setTargetPosition({x: props.left ? props.left : pos.x + pos.width, y: props.top ? props.top : pos.y})                            
 
     }, [ref.current])
 
