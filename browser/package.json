@@ -1,13 +1,19 @@
 {
-  "name": "browser",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@changeloghq/changeloghq-sdk-browser",
+  "version": "0.0.1",
+  "main": "./dist/lib/cjs/index.js",
+  "module": "./dist/lib/esm/index.js",
+  "types": "./dist/lib/esm/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lib:buildnpm:cjs": "tsc -p ./tsconfig.npm.json --module commonjs --outDir dist/lib/cjs",
+    "lib:buildnpm:esm": "tsc -p ./tsconfig.npm.json --outDir dist/lib/esm",
+    "lib:build": "npm run lib:buildnpm:esm && npm run lib:buildnpm:cjs",
+    "lib:publish": "npm run lib:build && npm publish --access public"
   },
   "dependencies": {
     "react": "^18.3.1",
