@@ -1,6 +1,6 @@
 {
   "name": "@changeloghq/changeloghq-sdk-browser",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "./dist/lib/cjs/index.js",
   "module": "./dist/lib/esm/index.js",
   "types": "./dist/lib/esm/index.d.ts",
@@ -14,14 +14,14 @@
     "lib:build": "npm run lib:buildnpm:esm && npm run lib:buildnpm:cjs",
     "lib:publish": "npm run lib:build && npm publish --access public"
   },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
+  "peerDependencies": {
+    "react": ">=17.0.2 <=18.2.0",
+    "react-dom": ">=17.0.2 <=18.2.0"
+  },  
   "devDependencies": {
     "@eslint/js": "^9.17.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",

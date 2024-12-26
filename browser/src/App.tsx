@@ -12,7 +12,7 @@ function App() {
     <>
       <h1>
         <span>ChangelogHQ SDK Demo</span>
-        <UnreadBadgeControlled url={serviceUrl} onClick={() => setChangelogOpened(true)} />
+        <UnreadBadgeControlled url={serviceUrl} onClick={() => setChangelogOpened(true)} hideIfZero={true} color='black' backgroundColor='yellow' />
       </h1>
             
       <ChangelogPopup url={serviceUrl} visible={changelogOpened} autoAcknowledgeChangelog={true} onDismiss={() => setChangelogOpened(false)}/>

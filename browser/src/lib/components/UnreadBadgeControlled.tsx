@@ -7,6 +7,11 @@ export interface IUnredBadgeControlledProps {
     width?: number
     url: string
     onClick?: () => void
+    
+    hideIfZero?: boolean
+
+    color?: string
+    backgroundColor?: string 
 }
 
 function UnreadBadgeControlled(props: IUnredBadgeControlledProps) {
@@ -70,7 +75,11 @@ function UnreadBadgeControlled(props: IUnredBadgeControlledProps) {
     
     }, [lastCheckForChanges])
     
-    return (<UnredBadge width={props.width} unreadCount={unreadCount} onClick={props.onClick}/>)
+    if (props.hideIfZero && unreadCount === 0) {
+        return (<></>)
+    } else {
+        return (<UnredBadge {...props} unreadCount={unreadCount} />)
+    }
 }
 
 export default UnreadBadgeControlled

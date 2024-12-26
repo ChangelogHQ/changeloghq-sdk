@@ -4,6 +4,9 @@ export interface IUnredBadgeProps {
     width?: number
     unreadCount: number
     onClick?: () => void
+
+    color?: string
+    backgroundColor?: string 
 }
 
 function UnreadBadge(props: IUnredBadgeProps) {
@@ -20,6 +23,10 @@ function UnreadBadge(props: IUnredBadgeProps) {
     // calculate the font size for the text
     const fontSizeLabel = (width / (.7 + (0.5 * props.unreadCount.toFixed(0).length))).toFixed(0) + 'px'        
     
+    // calculate the colors 
+    const bgColor = props.backgroundColor || 'red'
+    const ftColor = props.color || 'white'
+
     // calculate the position as soone the component is mounted
     useEffect(() => {
 
@@ -40,8 +47,8 @@ function UnreadBadge(props: IUnredBadgeProps) {
     // render the badge
     return (                
         <svg ref={ref} width={width} height={width} style={{position: "absolute", left: targetPosition.x, top: targetPosition.y, cursor: props.onClick ? 'pointer' : 'default' }} onClick={props.onClick}>
-            <circle cx={width / 2} cy={width /2 } r={width /2 } fill="red" />
-            <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize={fontSizeLabel} fontFamily="Arial" dy=".35em">{props.unreadCount.toFixed(0)}</text>
+            <circle cx={width / 2} cy={width /2 } r={width /2 } fill={bgColor} />
+            <text x="50%" y="50%" textAnchor="middle" fill={ftColor} fontSize={fontSizeLabel} fontFamily="Arial" dy=".35em">{props.unreadCount.toFixed(0)}</text>
         </svg>                
     )
 }
