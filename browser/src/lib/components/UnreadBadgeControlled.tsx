@@ -12,6 +12,9 @@ export interface IUnredBadgeControlledProps {
 
     color?: string
     backgroundColor?: string 
+
+    left?: number
+    top?: number
 }
 
 function UnreadBadgeControlled(props: IUnredBadgeControlledProps) {

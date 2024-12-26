@@ -7,6 +7,9 @@ export interface IUnredBadgeProps {
 
     color?: string
     backgroundColor?: string 
+
+    left?: number
+    top?: number
 }
 
 function UnreadBadge(props: IUnredBadgeProps) {
@@ -42,6 +45,16 @@ function UnreadBadge(props: IUnredBadgeProps) {
         // calculate the position of the parent element    
         const pos = parentElement.getBoundingClientRect()
         setTargetPosition({x: pos.x + pos.width, y: pos.y})                    
+
+        // override postion
+        if (props.left) {
+            setTargetPosition({x: props.left, y: pos.y})        
+        }
+
+        if (props.top) {
+            setTargetPosition({x: pos.x, y: props.top})        
+        }
+
     }, [ref.current])
 
     // render the badge
